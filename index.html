@@ -16,21 +16,26 @@
     />
   </head>
   <body>
+    <!-- HEADER SECTION -->
     <header class="header-container">
       <h1>Where in the world?</h1>
-      <section class="dark-mode-container">
+      <section class="dark-mode-wrapper">
         <ion-icon name="moon-outline"></ion-icon>
         <p>Dark Mode</p>
       </section>
     </header>
+    <!-- SEARCH/FILTER SECTION -->
     <section class="search-container">
-      <input
-        type="text"
-        id="input-search"
-        placeholder="Search for a country.."
-        class="input-style"
-      />
-      <form id="region-filter">
+      <div class="search-input-wrapper">
+        <ion-icon name="search-outline"></ion-icon>
+        <input
+          type="text"
+          id="input-search"
+          placeholder="Search for a country.."
+          class="header-input"
+        />
+      </div>
+      <form id="region-filter-form">
         <label for="region-select"></label>
         <select name="region" id="region-select" class="select-style">
           <option value="">Filter by Region</option>
@@ -42,5 +47,63 @@
         </select>
       </form>
     </section>
+    <!-- COUNTRY CARDS -->
+    <section class="card-container">
+      <article class="card">
+        <img src="" alt="country flag" id="flag"/>
+        <h2 id="name">Name</h2>
+        <p id="population">population</p>
+        <p id="region">region</p>
+        <p id="captial">captial</p>
+      </article>
+      <article class="card">
+        <img src="" alt="country flag" id="flag"/>
+        <h2 id="name">Name</h2>
+        <p id="population">population</p>
+        <p id="region">region</p>
+        <p id="captial">captial</p>
+      </article>
+      <article class="card">
+        <img src="" alt="country flag" id="flag"/>
+        <h2 id="name">Name</h2>
+        <p id="population">population</p>
+        <p id="region">region</p>
+        <p id="captial">captial</p>
+      </article>
+      <article class="card">
+        <img src="" alt="country flag" id="flag"/>
+        <h2 id="name">Name</h2>
+        <p id="population">population</p>
+        <p id="region">region</p>
+        <p id="captial">captial</p>
+      </article>
+      <article class="card">
+        <img src="" alt="country flag" id="flag"/>
+        <h2 id="name">Name</h2>
+        <p id="population">population</p>
+        <p id="region">region</p>
+        <p id="captial">captial</p>
+      </article>
+      <article class="card">
+        <img src="" alt="country flag" id="flag"/>
+        <h2 id="name">Name</h2>
+        <p id="population">population</p>
+        <p id="region">region</p>
+        <p id="captial">captial</p>
+      </article>
+      <article class="card">
+        <img src="" alt="country flag" id="flag"/>
+        <h2 id="name">Name</h2>
+        <p id="population">population</p>
+        <p id="region">region</p>
+        <p id="captial">captial</p>
+      </article>
+      <article class="card">
+        <img src="" alt="country flag" id="flag"/>
+        <h2 id="name">Name</h2>
+        <p id="population">population</p>
+        <p id="region">region</p>
+        <p id="captial">captial</p>
+      </article>
   </body>
 </html>
