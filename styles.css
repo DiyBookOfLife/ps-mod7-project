@@ -63,13 +63,12 @@ body {
 }
 
 /* FLAG CARDS */
-.card-container {
+#card-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 250px;
+  gap: 3rem;
 }
-.card{
-    width: 10%;
-    margin-left: 15px;
+.card {
+  background-color: white;
 }
