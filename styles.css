@@ -64,11 +64,17 @@ body {
 
 /* FLAG CARDS */
 #card-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 3rem;
+  margin: 0 30px;
 }
 .card {
   background-color: white;
+}
+
+.flag {
+  width: 100%;
+  height: 160px;   /* pick consistent height */
+  object-fit: cover;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rest Countries</title>
-    <script src="script.js" type="module"></script>
+    <script src="script.js" type="module" defer></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -24,8 +24,8 @@
         <p>Dark Mode</p>
       </section>
     </header>
-    <!-- SEARCH/FILTER SECTION -->
     <section class="search-container">
+      <!-- SEARCH SECTION -->
       <div class="search-input-wrapper">
         <ion-icon name="search-outline"></ion-icon>
         <input
@@ -35,6 +35,7 @@
           class="header-input"
         />
       </div>
+      <!-- FILTER SECTION -->
       <form id="region-filter-form">
         <label for="region-select"></label>
         <select name="region" id="region-select" class="select-style">
