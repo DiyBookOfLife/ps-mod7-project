@@ -78,3 +78,7 @@ body {
   height: 160px;   /* pick consistent height */
   object-fit: cover;
 }
+
+.input-class {
+  display: none;
+}
