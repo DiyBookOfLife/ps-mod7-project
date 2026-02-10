@@ -1,9 +1,9 @@
 // See all countries from the API on the homepage ✅
 // Filter countries by region ✅
 // Search for a country using an `input` field ✅
-// Click on a country to see more detailed information on a separate page
-// Click through to the border countries on the detail page
-// Toggle the color scheme between light and dark mode *(optional)*
+// Click on a country to see more detailed information on a separate page ✅
+// Click through to the border countries on the detail page ✅
+// Toggle the color scheme between light and dark mode *(optional)* ✅
 
 const cardContainer = document.getElementById("card-container");
 const regionSelect = document.getElementById("region-select");
@@ -43,6 +43,9 @@ function renderCards(data) {
     card.classList.add("card");
     card.dataset.code = item.cca3;
 
+    const contentContainer = document.createElement('section');
+    contentContainer.classList.add('flag-content');
+
     const flag = document.createElement("img");
     flag.classList.add("flag");
     flag.src = item.flags.svg;
@@ -60,7 +63,8 @@ function renderCards(data) {
     const capital = document.createElement("p");
     capital.textContent = `Capital: ${item.capital}`;
 
-    card.append(flag, name, population, region, capital);
+    card.append(contentContainer);
+    contentContainer.append(flag, name, population, region, capital)
 
     cardContainer.append(card);
   });
@@ -103,15 +107,17 @@ inputSearch.addEventListener("input", (e) => {
 // -------------------------
 cardContainer.addEventListener("click", (e) => {
   const clickedCard = e.target.closest(".card");
-  const code = clickedCard.dataset.code;
-  // if (clickedCard === code) {
-  //   window.location.href =
-  //     "http://127.0.0.1:5500/rest-countries-api-with-color-theme-switcher-master/detail.html";
-  //   return;
-  console.log("clicked");
-});
-// });
+  if (!clickedCard) return;
 
-// Click on a country to see more detailed information on a separate page
-// Click through to the border countries on the detail page
-// Toggle the color scheme between light and dark mode *(optional)*
+  const code = clickedCard.dataset.code;
+  // navigation to separate page ()
+  window.location.href =
+    `detail.html?code=${code}`;
+});
+
+const darkToggle = document.querySelector(".dark-mode-wrapper");
+
+darkToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+

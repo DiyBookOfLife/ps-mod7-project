@@ -1,0 +1,114 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 2px 1px 5px hsl(0, 0%, 52%);
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.5;
+  background-color: hsl(0, 0%, 98%);
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 300;
+}
+
+.dark-mode-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.detail-container {
+  padding: 3rem;
+}
+
+.back-btn {
+  margin-bottom: 3rem;
+}
+
+.country-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.flag-wrapper img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.country-info h2 {
+  margin-bottom: 2rem;
+}
+
+.info-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.info-left,
+.info-right {
+  list-style: none;
+  padding: 0;
+}
+
+.borders {
+  margin-top: 3rem;
+}
+
+#border-list button {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background-color: hsl(207, 26%, 17%);
+  color: white;
+}
+
+body.dark-mode .header {
+  background-color: hsl(209, 23%, 22%);
+}
+
+body.dark-mode .card {
+  background-color: hsl(209, 23%, 22%);
+}
+
+body.dark-mode .search-container,
+body.dark-mode .detail-container {
+  background-color: hsl(207, 26%, 17%);
+}
+
+body.dark-mode button,
+body.dark-mode select,
+body.dark-mode input {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .country-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-columns {
+    grid-template-columns: 1fr;
+  }
+}
