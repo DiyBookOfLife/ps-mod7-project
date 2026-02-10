@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Countries Project</title>
+    <script
+      src="./js/script.js"
+      type="module"
+      defer
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="./styles/styles.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+      <h1>Where in the world?</h1>
+      <section class="dark-mode-wrapper">
+        <ion-icon name="moon-outline"></ion-icon>
+        <p>Dark Mode</p>
+      </section>
+    </header>
+    <section class="search-container">
+      <!-- SEARCH SECTION -->
+      <div class="search-input-wrapper">
+        <ion-icon name="search-outline"></ion-icon>
+        <input
+          type="text"
+          id="input-search"
+          placeholder="Search for a country.."
+          class="header-input"
+        />
+        <span id="input-display" class="input-class"></span>
+      </div>
+      <!-- FILTER SECTION -->
+      <form id="region-filter-form">
+        <label for="region-select"></label>
+        <select name="region" id="region-select" class="select-style">
+          <option value="">Filter by Region</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </form>
+    </section>
+    <!-- COUNTRY CARDS -->
+    <section id="card-container"></section>
+  </body>
+</html>
