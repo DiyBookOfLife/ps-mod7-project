@@ -1,6 +1,10 @@
-## My process
+## Description
 
-## Live Demo 
+This project is a responsive countries explorer built using the REST Countries API. Users can browse all countries, search by name, filter by region, and view detailed information for each country on a separate page. The detail view includes population data, region and subregion info, capital, languages, currencies, and clickable border countries for easy navigation. A light and dark mode toggle is also included to improve usability and match the provided design.
+
+## Live Demo
+
+- Live Site URL: [View Live Demo](https://ps-mod7-project-8efueq634-toni-thomas-projects.vercel.app)
 
 ### Built with
 
