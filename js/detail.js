@@ -1,8 +1,8 @@
 // ---------------------
 // COUNTRY CARD DETAILS
 // ---------------------
-const params = new URLSearchParams(window.location.search);
-const code = params.get("code");
+const params = new URLSearchParams(window.location.search); // gets the URL query after ? & converts to readible obj
+const code = params.get("code"); // gets the value of key 'code'
 
 if (!code) {
   console.error("No country code found in URL");
@@ -23,7 +23,7 @@ async function fetchCountryDetails() {
     }
 
     const data = await response.json();
-    renderCardDetails(data[0]);
+    renderCardDetails(data[0]); // renders only the first object
   } catch (error) {
     console.log("Fetch Failed", error);
   }
@@ -32,9 +32,8 @@ async function fetchCountryDetails() {
 fetchCountryDetails();
 
 // ---------------------
-// COUNTRY CARD DETAILS
+// RENDER CARD DETAILS
 // ---------------------
-
 function renderCardDetails(country) {
   const container = document.querySelector(".country-detail");
   container.innerHTML = "";
@@ -45,24 +44,31 @@ function renderCardDetails(country) {
 
   const flag = document.createElement("img");
   flag.src = country.flags.svg;
-  flag.alt = country.flags.alt || country.name.common;
+  flag.alt = country.flags.alt;
 
   flagWrapper.append(flag);
 
   // INFO
-  const info = document.createElement("div");
+  const info = document.createElement("section");
   info.classList.add("country-info");
 
   const name = document.createElement("h2");
   name.textContent = country.name.common;
 
-  const columns = document.createElement("div");
+  const columns = document.createElement("section");
   columns.classList.add("info-columns");
 
   const left = document.createElement("ul");
   left.classList.add("info-left");
 
   const nativeName =
+    // 🚨🚨🚨🚨🚨
+    // ---------------------------------------------------------------------------------------
+    // country.name.nativeName is an object with dynamic keys
+    // Object.values converts the obb into an array (drops the keys, only returns the values)
+    // if no nativeName, return is undefined (Object.values(undefined) would crash)....
+    // so || {} says "return an empty array if no nativeName" (to avoid app crashing)
+    // ---------------------------------------------------------------------------------------
     Object.values(country.name.nativeName || {})[0]?.common || "N/A";
 
   left.innerHTML = `
@@ -78,6 +84,7 @@ function renderCardDetails(country) {
 
   const currencies =
     Object.values(country.currencies || {})
+      // from ["Euro", "US Dollar"] to "Euro, US Dollar"
       .map((c) => c.name)
       .join(", ") || "N/A";
 
@@ -91,7 +98,9 @@ function renderCardDetails(country) {
 
   columns.append(left, right);
 
+  // -------------------------
   // BORDERS
+  // -------------------------
   const bordersWrapper = document.createElement("div");
   bordersWrapper.classList.add("borders");
 
@@ -123,6 +132,7 @@ function renderCardDetails(country) {
   container.append(flagWrapper, info);
 }
 
+// RENDER BORDER FUNCTION
 function renderBorders(borders) {
   const borderList = document.getElementById("border-list");
   borderList.innerHTML = "";
@@ -144,17 +154,23 @@ function renderBorders(borders) {
   });
 }
 
-// BACK BUTTON
+// -------------------------
+// BUTTONS
+// -------------------------
+
+// BACK BTN
 document.querySelector(".back-btn").addEventListener("click", () => {
   window.history.back();
 });
 
-// HOME BUTTON
+// HOME BTN
 document.querySelector(".home-btn").addEventListener("click", () => {
   window.location.href = "index.html";
 });
 
+// -------------------------
 // DARK MODE
+// -------------------------
 const darkToggle = document.querySelector(".dark-mode-wrapper");
 
 darkToggle.addEventListener("click", () => {

@@ -43,8 +43,8 @@ function renderCards(data) {
     card.classList.add("card");
     card.dataset.code = item.cca3;
 
-    const contentContainer = document.createElement('section');
-    contentContainer.classList.add('flag-content');
+    const contentContainer = document.createElement("section");
+    contentContainer.classList.add("flag-content");
 
     const flag = document.createElement("img");
     flag.classList.add("flag");
@@ -64,7 +64,7 @@ function renderCards(data) {
     capital.textContent = `Capital: ${item.capital}`;
 
     card.append(contentContainer);
-    contentContainer.append(flag, name, population, region, capital)
+    contentContainer.append(flag, name, population, region, capital);
 
     cardContainer.append(card);
   });
@@ -111,13 +111,14 @@ cardContainer.addEventListener("click", (e) => {
 
   const code = clickedCard.dataset.code;
   // navigation to separate page ()
-  window.location.href =
-    `detail.html?code=${code}`;
+  window.location.href = `detail.html?code=${code}`;
 });
 
+// -------------------------
+// DARK MODE TOGGLE
+// -------------------------
 const darkToggle = document.querySelector(".dark-mode-wrapper");
 
 darkToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
-
